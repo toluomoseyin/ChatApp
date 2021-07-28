@@ -8,13 +8,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDM7Uy_i72EDPoVhRpu2Z77VvnWZT1iRy0",
-  authDomain: "tolu-chat-app.firebaseapp.com",
-  projectId: "tolu-chat-app",
-  storageBucket: "tolu-chat-app.appspot.com",
-  messagingSenderId: "15486041343",
-  appId: "1:15486041343:web:2adc05a9fbd14a6e2620ca",
-  measurementId: "G-2HHPD8X4LL",
+  apiKey: "AIzaSyAZjW0iOZWRBnjnfH3vinHTafJxBmyY2VQ",
+  authDomain: "toluchat-bdbd8.firebaseapp.com",
+  projectId: "toluchat-bdbd8",
+  storageBucket: "toluchat-bdbd8.appspot.com",
+  messagingSenderId: "468880108388",
+  appId: "1:468880108388:web:4cbeae524e0b65180da871",
 });
 
 const auth = firebase.auth();
@@ -36,7 +35,7 @@ function App() {
 function SignIn() {
   const SignInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
+    auth.signInWithPopup(provider).catch((error) => alert(error.message));
   };
   return <button onClick={SignInWithGoogle}>Sign in with Google</button>;
 }
